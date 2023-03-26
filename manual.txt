@@ -1,0 +1,15 @@
+1) install node.js 
+2) npm install -g typescript
+3) npm tsc --init (to get tsconfig.json)
+4) tsc -w (to watch every ts file in the project)
+   tsc -main.ts -w (to watch a specific file in the project)
+5) tsconfig.json:
+- "rootDir": "./src", (typescript input; before: //)
+- "outDir": "./build/js", (javascript output; before: //)
+- (optional) "target": "es5", (var vs let; before: "es2016")
+- (optional) "noEmitOnError": true, (not to compile with errors; before: //)
+  (alternative) tsc --noEmitOnError -w (to overwrite tsconfig.json)
+-  },
+  "include": [
+    "src"
+  ] (added at the bottom to ignore ts files outside src folder)
