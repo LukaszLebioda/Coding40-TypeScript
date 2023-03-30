@@ -1,15 +1,32 @@
-1) install node.js 
-2) npm install -g typescript
-3) npm tsc --init (to get tsconfig.json)
-4) tsc -w (to watch every ts file in the project)
-   tsc -main.ts -w (to watch a specific file in the project)
-5) tsconfig.json:
-- "rootDir": "./src", (typescript input; before: //)
-- "outDir": "./build/js", (javascript output; before: //)
-- (optional) "target": "es5", (var vs let; before: "es2016")
-- (optional) "noEmitOnError": true, (not to compile with errors; before: //)
-  (alternative) tsc --noEmitOnError -w (to overwrite tsconfig.json)
--  },
+(1) install node.js 
+(2) npm install -g typescript
+(3) npm tsc --init (to get tsconfig.json)
+(4) tsc -w (to watch every ts file in the root directory)
+   tsc -main.ts -w (to watch a specific file in the root directory)
+
+(5) tsconfig.json:
+- "rootDir": "./src", (typescript input; before: // "rootDir": "./")
+- "outDir": "./build/js", (javascript output; before: // "outDir": "./")
+- "target": "es2016", (compiles with let) // or: "target": "es5", (with var)
+
+(6) tsconfig.json:
+- (optional) "noEmitOnError": true, (not to compile with errors)
+  (alt) tsc --noEmitOnError -w (to overwrite tsconfig.json)
+
+(7) tsconfig.json - add at the very bottom not to compile *.ts files created outside src folder:
+{},
   "include": [
     "src"
-  ] (added at the bottom to ignore ts files outside src folder)
+  ] 
+
+(8) JavaScript is a loosely & dynamically typed language (we don't have to specify the type and we can change the type at any time).
+    TypeScript is a strongly & statically typed language (we specify the type and can't change it later on).
+    TypeScript INFERS what type we mean even without stating it IMPLICITLY: let username = "Lucas";
+    However, we can EXPLICITLY state what variable we want to use: let username: string = "Lucas";
+
+(9) Variables:
+let username: string = "Lucas";
+let age: number = "40";
+let isTester: boolean = true;
+let interests: any = [];
+let otherStuff: number | boolean | string;
