@@ -1,26 +1,42 @@
-let username: string = "Jimmy";
-console.log(username);
+// TUPLE => a typed array with a predefined length
+// and types for each index
+let myTuple:[string, number, boolean] = ["Lucas", 40, true];
 
-username = "Lucas";
-let user: number;
+// TYPE => a way to indicate what types of data
+// will be stored in the object
+// it's like creating a class
+// we could say interface as well (TYPE = INTERFACE)
+type driver = { // or interface Driver {} (without =)
+    name: string,
+    since: number,
+    active?: boolean,
+    teams?: (string | number)[]
+}
 
-let meaningOfLife: number;
-let isLoading: boolean | number;
+const MaxVerstappen: driver = {
+    name: "Max",
+    since: 2016,
+    active: true,
+    teams: [20061, "Red Bull"]
+}
 
-isLoading = 200;
+const driverFun = (driv: driver) => {
+    if(driv.name) {
+        return `Hello ${driv.name.toUpperCase()}!`
+    }
+    return "Hello!"
+}
+console.log(driverFun(MaxVerstappen));
 
-let album1: any;
-let album2: number | string | boolean; 
+// ENUMS - enumerated objects non existent in vanilla js
+enum Grade {
+    U = 1,
+    D,
+    C,
+    B, 
+    A,
+}
+console.log(Grade.U);
 
-// myName = "Lucas";
-// meaningOfLife = 42;
-// isLoading = true;
 
-// album1 = 40;
-// album1 = "40";
-// album2 = true;
 
-// const sum = (a: number, b: number) => {
-//     return a + b
-// }
-// console.log(sum(2, "klopsik"));

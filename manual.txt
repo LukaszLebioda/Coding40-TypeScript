@@ -29,4 +29,7 @@ let username: string = "Lucas";
 let age: number = "40";
 let isTester: boolean = true;
 let interests: any = [];
-let otherStuff: number | boolean | string;
+let otherStuff: number | boolean | string; ("union" type)
+
+(10) Functions:
+const sum = (a: number, b: number) => { return a * b } 
